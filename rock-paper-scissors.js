@@ -1,8 +1,12 @@
 let playerSelection = "paper";
-let computerSelection = "scissors";
 let userScore = 0;
 let computerScore = 0;
 
+function getComputerChoice () {
+    const dice = Math.floor(Math.random() * 3);
+    const choices = ["rock", "paper", "scissors"];
+    return choices[dice];
+}
 
 
 function playRound(playerSelection, computerSelection) {
@@ -48,4 +52,5 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+
+console.log(playRound(playerSelection, getComputerChoice()));
