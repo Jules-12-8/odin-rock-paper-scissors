@@ -10,19 +10,19 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     const selection = prompt("Whats your choice?");
-    return selection;
+    return selection.toLowerCase();
 }
 
 function playRound(playerSelection, computerSelection) {
-    switch (playerSelection.toLowerCase()) {
-        case computerSelection.toLowerCase():
+    switch (playerSelection) {
+        case computerSelection:
             console.log("It's a draw!");
             break;
         case "rock":
-            if (computerSelection.toLowerCase() === "paper") {
+            if (computerSelection === "paper") {
                 console.log("You loose this round!");
                 return "computer";
-            } else if (computerSelection.toLowerCase() === "scissors") {
+            } else if (computerSelection === "scissors") {
                 console.log("You won this round!");
                 return "player";
             } else {
@@ -30,10 +30,10 @@ function playRound(playerSelection, computerSelection) {
             }
             break;
         case "paper":
-            if (computerSelection.toLowerCase() === "rock") {
+            if (computerSelection === "rock") {
                 console.log("You won this round!");
                 return "player";
-            } else if (computerSelection.toLowerCase() === "scissors") {
+            } else if (computerSelection === "scissors") {
                 console.log("You loose this round!");
                 return "computer";
             } else {
@@ -41,10 +41,10 @@ function playRound(playerSelection, computerSelection) {
             }
             break;
         case "scissors":
-            if (computerSelection.toLowerCase() === "rock") {
+            if (computerSelection === "rock") {
                 console.log("You loose this round!");
                 return "computer";
-            } else if (computerSelection.toLowerCase() === "paper") {
+            } else if (computerSelection === "paper") {
                 console.log("You won this round!");
                 return "player";
             } else {
