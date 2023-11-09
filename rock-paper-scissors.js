@@ -16,14 +16,14 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case computerSelection:
-            console.log("It's a draw!");
+            console.log(`Computer played ${computerSelection}, it's a draw!`);
             break;
         case "rock":
             if (computerSelection === "paper") {
-                console.log("You loose this round!");
+                console.log("Computer played paper, you loose this round!");
                 return "computer";
             } else if (computerSelection === "scissors") {
-                console.log("You won this round!");
+                console.log("Computer played scissors, you won this round!");
                 return "player";
             } else {
                 console.error("There is an error");
@@ -31,10 +31,10 @@ function playRound(playerSelection, computerSelection) {
             break;
         case "paper":
             if (computerSelection === "rock") {
-                console.log("You won this round!");
+                console.log("Computer played rock, you won this round!");
                 return "player";
             } else if (computerSelection === "scissors") {
-                console.log("You loose this round!");
+                console.log("Computer played scissors, you loose this round!");
                 return "computer";
             } else {
                 console.error("There is an error");
@@ -42,10 +42,10 @@ function playRound(playerSelection, computerSelection) {
             break;
         case "scissors":
             if (computerSelection === "rock") {
-                console.log("You loose this round!");
+                console.log("Computer played rock, you loose this round!");
                 return "computer";
             } else if (computerSelection === "paper") {
-                console.log("You won this round!");
+                console.log("Computer played paper, you won this round!");
                 return "player";
             } else {
                 console.error("There is an error");
