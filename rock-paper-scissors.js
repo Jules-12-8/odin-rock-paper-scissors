@@ -16,7 +16,7 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case computerSelection:
-            console.log(`Computer played ${computerSelection}, it's a draw!`);
+            console.log(`Computer played ${computerSelection} too, it's a draw!`);
             break;
         case "rock":
             if (computerSelection === "paper") {
@@ -56,8 +56,27 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let roundNbr = 0;
+    while (roundNbr < 5) {
+        let roundResult = playRound(getPlayerChoice(), getComputerChoice());
+        if (roundResult === "player") {
+            playerScore++;
+        } else if ((roundResult === "computer")) {
+            computerScore++;
+        }
+        console.log(`Player have ${playerScore} points and Computer have ${computerScore} points.`);
+        roundNbr++;
+    }
+    if (playerScore === computerScore) {
+        console.log(`${playerScore} to ${computerScore}, equality !`);
+    } else if (playerScore > computerScore) {
+        console.log("You won the game !!!");
+    } else {
+        console.log("Computer won the game");
+    }
+}
 
-playerSelection = getPlayerChoice();
-console.log(playerSelection);
-
-console.log(playRound(playerSelection, getComputerChoice()));
+game();
