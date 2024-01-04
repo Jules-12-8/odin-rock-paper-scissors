@@ -66,17 +66,14 @@ function game(roundWinner) {
 
     if (playerScore === 5) {
         gameStats.textContent = `You won the game in ${roundNbr} rounds!`;
-        // Figure why it doesn't work
-        // buttons.forEach((button) => {
-        //     button.removeEventListener('click', button);
-        //     console.log(button);
-        // });
+        playerScore = 0;
+        computerScore = 0;
+        roundNbr = 0;
     } else if (computerScore === 5) {
         gameStats.textContent = `The computer won the game in ${roundNbr} rounds!`;
-        // buttons.forEach((button) => {
-        //     button.removeEventListener('click', button);
-        //     console.log(button);
-        // });
+        playerScore = 0;
+        computerScore = 0;
+        roundNbr = 0;
     } else {
         gameStats.textContent = `Round ${roundNbr}; player : ${playerScore}; computer : ${computerScore}`;
     }
